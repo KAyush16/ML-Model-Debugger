@@ -1,284 +1,194 @@
-﻿# ML-Model-Debugger
-https://ml-debugg.streamlit.app/
-A professional-grade Streamlit web application for training machine learning models and visualizing advanced diagnostics beyond basic accuracy metrics.
+# 🔬 ML Model Debugger
 
-✨ Features
-🎯 Core Functionality
-Multiple Model Support: Logistic Regression, Random Forest, XGBoost
-Smart Data Handling: Auto-detection of target/feature columns, missing value strategies
-Configurable Training: Customizable hyperparameters and train/validation splits
-Persistent State: No unnecessary retraining, efficient session management
-📊 Advanced Diagnostics
-Feature Importance Drift Analysis
+### Advanced Machine Learning Diagnostics & Explainability Platform
 
-Compares feature importance between training and validation sets
-Identifies features that may not generalize well
-Visual highlighting of high-drift features
-Prediction Confidence Heatmap
+🚀 **Live Demo:** https://ml-debugg.streamlit.app/
 
-Shows confidence distribution across true labels
-Identifies low-confidence predictions
-Highlights high-confidence errors
-Error Clustering Visualization
+A professional-grade Streamlit application for training machine learning models and analyzing model behavior beyond traditional accuracy metrics.
 
-2D visualization of misclassified samples using PCA or t-SNE
-Identifies systematic error patterns
-Color-coded by true and predicted labels
-Confusion Matrix
+---
 
-Interactive normalized confusion matrix
-Detailed breakdown of all prediction combinations
-Export capability for further analysis
-SHAP Explainability (Optional)
+## ✨ Overview
 
-Global feature importance using SHAP values
-Local explanations for individual predictions
-Waterfall plots showing feature contributions
-📈 Comprehensive Metrics
-Accuracy, Precision, Recall, F1-Score
-ROC-AUC (binary and multiclass)
-Train vs Validation comparison
-Detailed classification reports
-💾 Export Capabilities
-Save trained models (pickle format)
-Export predictions with confidence scores
-Download misclassified samples
-Export metrics in JSON format
-🚀 Quick Start
-Prerequisites
-Python 3.8 or higher
-pip package manager
-Installation
-Clone or download this repository
+ML Model Debugger helps data scientists and ML practitioners understand **why** a model performs the way it does through advanced diagnostics, explainability tools, and interactive visualizations.
 
-Install dependencies:
+Instead of stopping at accuracy scores, this platform provides insights into:
 
+* Feature importance drift
+* Prediction confidence
+* Misclassification patterns
+* Error clustering
+* SHAP explainability
+* Model generalization
+
+---
+
+## 📸 Application Preview
+
+> Add screenshots here after deployment
+
+### Dashboard
+
+![Dashboard](assets/dashboard.png)
+
+### Feature Drift Analysis
+
+![Feature Drift](assets/feature_drift.png)
+
+### SHAP Explainability
+
+![SHAP](assets/shap.png)
+
+---
+
+## 🎯 Key Features
+
+### 🤖 Multiple Model Support
+
+* Logistic Regression
+* Random Forest
+* XGBoost
+
+### 📊 Advanced Diagnostics
+
+#### Feature Importance Drift
+
+Compare feature importance between training and validation datasets to identify unstable predictors.
+
+#### Prediction Confidence Analysis
+
+Visualize confidence distributions and detect high-confidence prediction errors.
+
+#### Error Clustering
+
+Analyze misclassified samples using PCA and t-SNE to uncover hidden patterns.
+
+#### Interactive Confusion Matrix
+
+Explore prediction performance with normalized and raw confusion matrices.
+
+#### SHAP Explainability
+
+Understand global feature importance and local prediction explanations.
+
+---
+
+## 📈 Evaluation Metrics
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* ROC-AUC
+* Classification Report
+* Train vs Validation Comparison
+
+---
+
+## 💾 Export Options
+
+* Trained Models (.pkl)
+* Predictions with Confidence Scores
+* Misclassified Samples
+* Metrics Reports (JSON)
+
+---
+
+## 🛠️ Tech Stack
+
+| Category             | Tools                 |
+| -------------------- | --------------------- |
+| Frontend             | Streamlit             |
+| Machine Learning     | Scikit-Learn, XGBoost |
+| Visualization        | Plotly                |
+| Explainability       | SHAP                  |
+| Data Processing      | Pandas, NumPy         |
+| Scientific Computing | SciPy                 |
+
+---
+
+## 🏗️ Project Structure
+
+```text
+ML_Model_Debugger/
+│
+├── app.py
+├── data.py
+├── model.py
+├── viz.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/KAyush16/ML-Model-Debugger.git
+cd ML-Model-Debugger
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Run the application:
+```
+
+### Run Application
+
+```bash
 streamlit run app.py
-Open your browser and navigate to:
+```
+
+Application will be available at:
+
+```text
 http://localhost:8501
-📖 Usage Guide
-1. Upload Dataset
-Click "Browse files" in the sidebar
-Upload a CSV file with your dataset
-The app will automatically detect columns and suggest a target
-2. Configure Settings
-Data Configuration:
+```
 
-Select target column (what you want to predict)
-Choose feature columns (predictors)
-Select missing value strategy (drop, mean, median)
-Set train/validation split ratio
-Model Configuration:
+---
 
-Choose model type (Logistic Regression, Random Forest, or XGBoost)
-Adjust hyperparameters using sliders
-Each model type shows relevant parameters
-3. Train Model
-Click the "🚀 Train Model" button
-Wait for training to complete (progress indicator shown)
-Model and results are stored in session state
-4. Explore Diagnostics
-Navigate through the tabs to explore different diagnostic visualizations:
+## 📊 Supported Datasets
 
-Feature Importance Drift:
+Any classification dataset in CSV format:
 
-Compare how features perform on train vs validation
-Adjust drift threshold to highlight concerning features
-View detailed drift metrics in expandable table
-Prediction Confidence:
+* Iris Dataset
+* Titanic Dataset
+* Wine Quality Dataset
+* Credit Card Fraud Dataset
+* Custom User Datasets
 
-See confidence distribution across classes
-Identify low-confidence predictions
-Monitor high-confidence errors
-Error Clustering:
+---
 
-Choose between PCA or t-SNE visualization
-Identify patterns in misclassifications
-Export misclassified samples for analysis
-Confusion Matrix:
+## 🔍 Why This Project?
 
-Interactive heatmap showing all predictions
-Both raw counts and normalized percentages
-Expandable detailed table view
-SHAP Explainability:
+Most ML dashboards stop at showing model accuracy.
 
-Global feature importance rankings
-Select individual samples for detailed explanations
-Waterfall plots showing feature contributions
-5. Export Results
-Use the export buttons to save:
+ML Model Debugger focuses on:
 
-Trained model (for future use)
-Predictions (with labels and confidence)
-Metrics (comprehensive JSON report)
-🏗️ Architecture
-Modular Design
-ml_debugger/
-├── app.py          # Main Streamlit UI and orchestration
-├── data.py         # Data loading, preprocessing, and validation
-├── model.py        # ML model training and evaluation
-├── viz.py          # Plotly visualization functions
-└── requirements.txt # Python dependencies
-Key Design Decisions
-Session State Management
+* Understanding model behavior
+* Diagnosing generalization issues
+* Identifying unstable features
+* Explaining individual predictions
+* Visualizing systematic errors
 
-All data and models stored in st.session_state
-Prevents unnecessary recomputation
-Survives widget interactions
-Form-Based Training
+This makes it useful for both learning and real-world model validation workflows.
 
-Uses st.form to prevent auto-rerun
-Explicit "Train Model" button required
-Clean separation of configuration and execution
-Lazy SHAP Computation
+---
 
-SHAP values computed only when tab is opened
-Cached in session state for subsequent views
-Uses sampling for large datasets
-Error Handling
+## 👨‍💻 Author
 
-Graceful degradation for missing dependencies
-Clear error messages for user issues
-Try-catch blocks around all critical operations
-🔧 Configuration Options
-Data Processing
-Missing Values: Drop rows, fill with mean, or fill with median
-Train/Val Split: 10% to 40% for validation (default 20%)
-Feature Selection: Manual selection or use all features
-Model Hyperparameters
-Logistic Regression:
+**Ayush K Jha**
 
-C (Regularization): 0.01 to 10.0
-Max Iterations: 100 to 5000
-Random Forest:
+Computer Science Student | Machine Learning Enthusiast
 
-Number of Trees: 10 to 500
-Max Depth: 2 to 50
-Min Samples Split: 2 to 20
-XGBoost:
+GitHub: https://github.com/KAyush16
 
-Number of Estimators: 10 to 500
-Max Depth: 2 to 20
-Learning Rate: 0.01 to 0.3
-📊 Example Datasets
-The app works with any classification dataset in CSV format. Recommended characteristics:
+---
 
-At least 10 rows (preferably 100+)
-Clear target column (categorical or binary)
-Numeric and/or categorical features
-Reasonable class balance (though imbalance is handled)
-Example datasets you can try:
+## ⭐ If you found this project useful
 
-Iris dataset (multiclass classification)
-Titanic survival (binary classification)
-Wine quality (multiclass classification)
-Credit card fraud detection (binary, imbalanced)
-🎨 UI Features
-Visual Design
-Clean, professional interface
-Responsive layout with wide mode
-Color-coded metrics with delta indicators
-Interactive Plotly charts (zoom, pan, hover)
-User Experience
-Progress indicators for long operations
-Helpful tooltips on all inputs
-Expandable sections for detailed data
-Clear error messages and warnings
-Download buttons for all exports
-🔍 Troubleshooting
-Common Issues
-"XGBoost not available"
-
-Solution: XGBoost is optional. Use Logistic Regression or Random Forest, or install with pip install xgboost
-"SHAP not installed"
-
-Solution: SHAP is optional. Install with pip install shap to enable explainability features
-"Dataset too small"
-
-Solution: Upload a dataset with at least 10 rows. More rows (100+) recommended for meaningful analysis
-"Memory error during training"
-
-Solution: Reduce dataset size, use simpler model, or reduce number of features
-App won't start
-
-Solution: Ensure all dependencies are installed: pip install -r requirements.txt
-🚧 Advanced Usage
-Custom Model Persistence
-Models are saved with pickle and include:
-
-Trained model object
-Feature names and ordering
-Data processor configuration
-Model type and hyperparameters
-To load a saved model:
-
-import pickle
-with open('model_20240129_120000.pkl', 'rb') as f:
-    model_data = pickle.load(f)
-    model = model_data['model']
-    feature_names = model_data['feature_names']
-Extending the App
-Adding new model types:
-
-Add to model.py in MLModel._initialize_model()
-Add hyperparameters section in app.py sidebar
-Update model selection dropdown
-Adding new visualizations:
-
-Create visualization function in viz.py
-Add new tab in render_main_content()
-Call visualization function with appropriate data
-Custom metrics:
-
-Add calculation in model.py _calculate_metrics()
-Display in metrics overview or detailed section
-📝 Best Practices
-For Best Results
-Data Quality
-
-Clean your data before upload
-Handle extreme outliers
-Ensure reasonable class distribution
-Model Selection
-
-Start with Logistic Regression for baseline
-Use Random Forest for complex patterns
-Try XGBoost for best performance
-Hyperparameter Tuning
-
-Start with defaults
-Adjust based on validation metrics
-Monitor train/val gap for overfitting
-Diagnostic Interpretation
-
-Low feature drift = good generalization
-High confidence errors = systematic issues
-Clustered errors = learnable patterns
-🤝 Contributing
-This is a demonstration project. To extend or improve:
-
-Fork the repository
-Create a feature branch
-Add your enhancements
-Test thoroughly
-Submit a pull request
-📄 License
-This project is provided as-is for educational and professional portfolio purposes.
-
-🙏 Acknowledgments
-Built with:
-
-Streamlit - Web framework
-scikit-learn - ML algorithms
-Plotly - Interactive visualizations
-SHAP - Model explainability
-XGBoost - Gradient boosting
-📧 Support
-For issues or questions:
-
-Check the troubleshooting section
-Review the usage guide
-Examine error messages carefully
-Verify all dependencies are installed
+Consider starring the repository.
