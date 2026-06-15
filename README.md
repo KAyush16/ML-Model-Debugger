@@ -25,19 +25,25 @@ Instead of stopping at accuracy scores, this platform provides insights into:
 
 ## 📸 Application Preview
 
-> Add screenshots here after deployment
+<img width="1906" height="1012" alt="Screenshot 2026-06-15 211458" src="https://github.com/user-attachments/assets/e561e3d7-0e2e-40b7-a39a-4eeb30f13913" />
 
 ### Dashboard
 
-![Dashboard](assets/dashboard.png)
+<img width="1742" height="955" alt="Screenshot 2026-06-15 211521" src="https://github.com/user-attachments/assets/077d4e17-05ea-4563-8723-8c759ae91d7d" />
+
+<img width="1907" height="1013" alt="Screenshot 2026-06-15 211655" src="https://github.com/user-attachments/assets/c5d3d3d8-373f-44c7-bec4-970ba9b82672" />
+<img width="1812" height="937" alt="Screenshot 2026-06-15 211728" src="https://github.com/user-attachments/assets/8b8b4361-7ad5-4abe-9b0d-74881f62e1d7" />
+
 
 ### Feature Drift Analysis
+<img width="1875" height="980" alt="Screenshot 2026-06-15 211719" src="https://github.com/user-attachments/assets/17102598-4bba-455f-a712-efefebc15d64" />
 
-![Feature Drift](assets/feature_drift.png)
+
 
 ### SHAP Explainability
+<img width="1897" height="962" alt="Screenshot 2026-06-15 211734" src="https://github.com/user-attachments/assets/aa5c5366-594c-445f-8e84-085c633a8e0c" />
 
-![SHAP](assets/shap.png)
+
 
 ---
 
